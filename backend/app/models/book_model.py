@@ -64,3 +64,6 @@ class Book(Base):
         default=True,
         nullable=False,
     )
+
+    # Step-3: Relationships
+    transactions = relationship("Transaction", back_populates="book", cascade="all, delete-orphan")

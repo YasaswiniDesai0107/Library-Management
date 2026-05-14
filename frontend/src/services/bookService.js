@@ -35,6 +35,12 @@ const bookService = {
     const response = await api.delete(`/books/${id}`);
     return response.data;
   },
+
+  // GET /books/search/find
+  searchBooks: async (params) => {
+    const response = await api.get('/books/search/find', { params });
+    return response.data;
+  },
 };
 
 export default bookService;

@@ -160,3 +160,23 @@ def delete_book(db: Session, book_id: int) -> dict:
     db.commit()        # Execute the DELETE statement
 
     return {"message": f"Book with ID {book_id} has been deleted successfully."}
+
+
+# -----------------------------------------------------------
+# SEARCH: Find books by criteria
+# -----------------------------------------------------------
+def search_books(db: Session, title: str = None, author: str = None, category: str = None):
+    """
+    Search books based on multiple optional criteria.
+    Uses 'like' for partial matches.
+    """
+    query = db.query(Book)
+    
+    if title:
+        query = query.filter(Book.title.ilike(f"%{title}%"))
+    if author:
+        query = query.filter(Book.author.ilike(f"%{author}%"))
+    if category:
+        query = query.filter(Book.category.ilike(f"%{category}%"))
+        
+    return query.all()

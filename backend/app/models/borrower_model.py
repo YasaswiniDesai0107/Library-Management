@@ -49,3 +49,6 @@ class Borrower(Base):
         String(20),
         nullable=True,
     )
+
+    # Step-3: Relationships
+    transactions = relationship("Transaction", back_populates="borrower", cascade="all, delete-orphan")

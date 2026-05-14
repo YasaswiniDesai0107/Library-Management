@@ -18,6 +18,7 @@ const Sidebar = ({ isOpen }) => {
     { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
     { name: 'Books', path: '/books', icon: BookOpen },
     { name: 'Borrowers', path: '/borrowers', icon: Users },
+    { name: 'History', path: '/transactions', icon: Library },
   ];
 
   return (

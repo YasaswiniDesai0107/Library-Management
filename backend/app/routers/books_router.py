@@ -143,3 +143,22 @@ def delete_book(
     - **book_id**: The unique identifier of the book to delete
     """
     return book_crud.delete_book(db=db, book_id=book_id)
+
+
+# -----------------------------------------------------------
+# GET /books/search
+# Search books by title, author, or category
+# -----------------------------------------------------------
+@router.get(
+    "/search/find",
+    response_model=List[BookResponse],
+    summary="Search books",
+)
+def search_books(
+    title: str = None,
+    author: str = None,
+    category: str = None,
+    db: Session = Depends(get_db)
+):
+    """Search for books using title, author, or category filters."""
+    return book_crud.search_books(db, title, author, category)

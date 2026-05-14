@@ -6,6 +6,7 @@ import MainLayout from './layouts/MainLayout';
 import Dashboard from './pages/Dashboard';
 import Books from './pages/Books';
 import Borrowers from './pages/Borrowers';
+import Transactions from './pages/Transactions';
 
 /**
  * App.jsx
@@ -24,6 +25,7 @@ function App() {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="books" element={<Books />} />
         <Route path="borrowers" element={<Borrowers />} />
+        <Route path="transactions" element={<Transactions />} />
         
         {/* 404 Fallback - can be improved with a dedicated 404 component */}
         <Route path="*" element={<Navigate to="/dashboard" replace />} />

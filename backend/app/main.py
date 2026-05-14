@@ -16,14 +16,14 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from app.config.settings import settings
 from app.database import engine, Base
-from app.routers import books_router, borrowers_router
+from app.routers import books_router, borrowers_router, transactions_router
 
 # -----------------------------------------------------------
 # Import all models so SQLAlchemy knows about them
 # before creating tables. This is required for Base.metadata
 # to discover all table definitions.
 # -----------------------------------------------------------
-from app.models import book_model, borrower_model  # noqa: F401
+from app.models import book_model, borrower_model, transaction_model  # noqa: F401
 
 
 # -----------------------------------------------------------
@@ -112,6 +112,7 @@ async def general_exception_handler(request: Request, exc: Exception):
 # -----------------------------------------------------------
 app.include_router(books_router.router)
 app.include_router(borrowers_router.router)
+app.include_router(transactions_router.router)
 
 
 # -----------------------------------------------------------
