@@ -1,0 +1,32 @@
+# ============================================================
+# requirements.txt
+# Python dependencies for the Library Management System backend.
+# Install with: pip install -r requirements.txt
+# ============================================================
+
+# Web framework
+fastapi==0.115.5
+
+# ASGI server to run FastAPI
+uvicorn[standard]==0.32.1
+
+# ORM for database operations
+SQLAlchemy==2.0.36
+
+# MySQL database driver (pure Python — no C extensions needed)
+pymysql==1.1.1
+
+# Pydantic v2 for data validation and serialization
+pydantic==2.10.3
+
+# Pydantic extension to load settings from .env files
+pydantic-settings==2.6.1
+
+# Email validation support for Pydantic's EmailStr type
+email-validator==2.2.0
+
+# Cryptography library (required by some PyMySQL SSL features)
+cryptography==43.0.3
+
+# Python-dotenv (optional — pydantic-settings handles .env loading)
+python-dotenv==1.0.1
